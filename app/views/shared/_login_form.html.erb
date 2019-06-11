@@ -1,14 +1,7 @@
-<h2>ログイン</h2>
-<form>
-  <div>
-    <label>ユーザー名 : </label>
-    <input type="text">
-  </div>
-  <div>
-    <label>パスワード : </label>
-    <input type="password">
-  </div>
-  <div>
-    <input type="submit" value="ログイン">
-  </div>
-</form>
+<%# <% unless logged_in? %>
+  <h2 class="btn-button"><%= link_to "Sign up!", :signup, class: "btn btn-info" %></h2>
+<%# <% end %>
+
+<%# <% unless logged_in? %>
+  <h2 class="btn-login"><%= link_to "Login", "#", class: "btn btn-default" %></h2>
+<%# <% end %>
