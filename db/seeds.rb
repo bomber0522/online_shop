@@ -4,8 +4,8 @@ names = %w(Taro Jiro Hana John Mike Sophy Bill Alex Mary Tom)
     name: names[idx],
     email: "#{names[idx]}@example.com",
     # admin: (idx == 0),
-    # password: "asagao",
-    # password_confirmation: "asagao",
+    password: "asagao",
+    password_confirmation: "asagao",
     # activated: true,
     # activated_at: Time.zone.now
   )
@@ -16,8 +16,8 @@ end
     name: "John#{idx + 1}",
     email: "John#{idx+1}@example.com",
     # admin: false,
-    # password: "password",
-    # password_confirmation: "password",
+    password: "password",
+    password_confirmation: "password",
     # activated: true,
     # activated_at: Time.zone.now
   )
