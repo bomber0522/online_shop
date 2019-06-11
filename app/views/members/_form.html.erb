@@ -1,5 +1,5 @@
 <%= form_for(@member) do |f| %>
-  
+
 <table class="attr" border="2">
   <tr>
     <th class="profile-user" colspan="2">画像を選択</th>
@@ -8,15 +8,15 @@
     <td class="profile-user" colspan="2"><%= f.file_field :new_profile_picture, :class => "btn btn-form" %></td>
   </tr>
   <tr>
-    <th class="profile-user" colspan="2"></th>
+
   </tr>
   <tr>
     <td class="prof-content" colspan="2">
-      
+ 
         <div class="image-pic">
-          
-          
-          
+
+
+
         </div>
       <% else %>
         <div class="no-pic">画像はありません。</div>

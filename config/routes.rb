@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   get "contact" => "top#contact"
   get "/signup", to: "members#new"
   post "/signup", to: "members#create"
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
   resources :members
 end

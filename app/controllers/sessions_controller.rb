@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    member = Member.find_by(email: params[:session[:email].downcase])
+    member = Member.find_by(email: params[:session][:email].downcase)
     if member && member.authenticate(params[:session][:password])
       if member.activated?
         log_in member
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    logout if logged_in?
+    log_out if logged_in?
     redirect_to :root
   end
 end
