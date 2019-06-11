@@ -1,0 +1,23 @@
+<% provide(:title, 'ALL members') %>
+<h1 class="all-members">会員一覧</h1>
+
+<table class="list" border="1">
+  <thead>
+    <tr>
+      <th class="user-name">ユーザー名</th>
+      <th class="user-pic">画像</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td class="user-name">
+          <%= link_to member.name, member %>
+        </td>
+        <td>
+          プロフィール写真が入ります
+        </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
