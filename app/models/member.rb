@@ -9,6 +9,12 @@ class Member < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
+  def Member.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engin::MIN_COST :
+                              BCrypt::Engin.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+
   def Member.new_token
     SecureRandom.urlsafe_base64
   end
@@ -18,7 +24,13 @@ class Member < ApplicationRecord
     update_attribute(:remember_digest, Member.digest(remember_token))
   end
 
-  def authenticated?(remember_token)
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
+
+  def forget
+    update_attribute(:remember_digest, nil)
   end
 end
