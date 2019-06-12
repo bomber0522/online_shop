@@ -11,3 +11,12 @@
 ### Association
 - has_many :entries, dependent: :destory
 - has_many :votes, dependent: :destroy
+
+## articlesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|body|text|null: false|
+|released_at|datetime|null: false|
+|expired_at|datetime|
+|member_only|boolean|null: false, default: false|
