@@ -1,4 +1,4 @@
-<% provide(:title, 'ALL members') %>
+<% provide(:title, 'All members') %>
 <h1 class="all-members">会員一覧</h1>
 
 <table class="list" border="1">
@@ -14,10 +14,13 @@
         <td class="user-name">
           <%= link_to member.name, member %>
         </td>
-        <td>
-          プロフィール写真が入ります
+        <td class="user-pic">
+            <% if member.profile_picture.attached? %>
+            <%= image_tag member.profile_picture.variant(resize: 50) %>
+          <% end %>
         </td>
       </tr>
       <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+<%= paginate @members %>
