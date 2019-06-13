@@ -3,7 +3,7 @@ names = %w(Taro Jiro Hana John Mike Sophy Bill Alex Mary Tom)
   Member.create(
     name: names[idx],
     email: "#{names[idx]}@example.com",
-    # admin: (idx == 0),
+    admin: (idx == 0),
     password: "asagao",
     password_confirmation: "asagao",
     activated: true,
@@ -15,7 +15,7 @@ end
   Member.create(
     name: "John#{idx + 1}",
     email: "John#{idx+1}@example.com",
-    # admin: false,
+    admin: false,
     password: "password",
     password_confirmation: "password",
     activated: true,
