@@ -8,8 +8,16 @@ class Member < ApplicationRecord
                format: { with: VALID_EMAIL_REGEX },
                uniqueness: { case_sensitive: false }
   has_secure_password
-  
+
   has_many :entries, dependent: :destroy
+  has_many :active_relationships,  class_name:  "Relationship",
+                                   foreign_key: "follower_id",
+                                   dependent:   :destroy
+  has_many :passive_relationships, class_name:  "Relationship",
+                                   foreign_key: "followed_id",
+                                   dependent:   :destroy
+  has_many :following, through: :active_relationships,  source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
   has_many :votes, dependent: :destroy
   has_many :voted_entries, through: :votes, source: :entry
   has_one_attached :profile_picture
@@ -29,8 +37,8 @@ class Member < ApplicationRecord
   end
 
   def Member.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engin::MIN_COST :
-                              BCrypt::Engin.cost
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                              BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
 
@@ -46,7 +54,7 @@ class Member < ApplicationRecord
   def authenticated?(attribute, token)
     digest = send("#{attribute}_digest")
     return false if digest.nil?
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   before_save do
@@ -56,7 +64,7 @@ class Member < ApplicationRecord
       self.profile_picture.purge
     end
   end
-  
+
   def forget
     update_attribute(:remember_digest, nil)
   end
@@ -84,8 +92,20 @@ class Member < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
-  def vatable_for?(entry)
+  def votable_for?(entry)
     entry && entry.author != self && !votes.exists?(entry_id: entry.id)
+  end
+
+  def follow(other_member)
+    following << other_member
+  end
+
+  def unfollow(other_member)
+    active_relationships.find_by(followed_id: other_member.id).destroy
+  end
+
+  def following?(other_member)
+    following.include?(other_member)
   end
 
   private

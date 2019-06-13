@@ -55,3 +55,13 @@
 ## Assosiation
 - belongs_to :entry
 - belongs_to :member
+
+## Relationshipsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|follower_id|integer|
+|followed_id|integer|
+
+## Assosiation
+- belongs_to :follower, class_name: "Member"
+- belongs_to :followed, class_name: "Member"
