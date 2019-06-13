@@ -45,3 +45,13 @@
 
 ## Assosiation
 - belongs_to :entry
+
+## Votesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|entry|references|null: false|
+|member|references|null: false|
+
+## Assosiation
+- belongs_to :entry
+- belongs_to :member

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_13_053519) do
+ActiveRecord::Schema.define(version: 2019_06_13_073916) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -77,6 +77,15 @@ ActiveRecord::Schema.define(version: 2019_06_13_053519) do
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.index ["email"], name: "index_members_on_email", unique: true
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "entry_id", null: false
+    t.integer "member_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entry_id"], name: "index_votes_on_entry_id"
+    t.index ["member_id"], name: "index_votes_on_member_id"
   end
 
 end
