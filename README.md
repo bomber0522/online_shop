@@ -35,3 +35,13 @@
 - has_many :images, class_name: "EntryImage"
 - has_many :votes, dependent: :destroy
 - has_many :votes, through: :votes, source: :member
+
+## entry_imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|entry|references|
+|alt_text|string|null: false, default: ""|
+|position|integer|
+
+## Assosiation
+- belongs_to :entry
