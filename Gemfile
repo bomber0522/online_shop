@@ -6,18 +6,20 @@ gem 'puma',         '3.9.1'
 gem 'sass-rails',   '5.0.6'
 gem 'uglifier',     '3.2.0'
 gem 'coffee-rails', '4.2.2'
-gem 'jquery-rails', '4.3.1'
+gem 'jquery-rails'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bcrypt', '~> 3.1.7'
 gem 'acts_as_list'
+gem 'aws-sdk-s3', require: false
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'rails-i18n', '~> 5.1'
 gem 'kaminari'
 gem 'kaminari-i18n'
 gem 'rails_autolink'
+gem 'mini_magick', '~> 4.8'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
