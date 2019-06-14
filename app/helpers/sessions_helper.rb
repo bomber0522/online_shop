@@ -20,12 +20,13 @@ module SessionsHelper
     elsif (member_id = cookies.signed[:member_id])
       member = Member.find_by(id: member_id)
     if member && member.authenticated?(:remember, cookies[:remember_token])
-      login_in member
+      log_in member
       @current_member = member
     end
   end
 end
 
+  # ユーザーがログインしていればtrue、その他ならfalseを返す
   def logged_in?
     !current_member.nil?
   end
@@ -40,6 +41,7 @@ end
     forget(current_member)
     session.delete(:member_id)
     @current_member = nil
+
   end
 
   def redirect_back_or(default)

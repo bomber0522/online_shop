@@ -4,7 +4,7 @@ class EntryImagesController < ApplicationController
   before_action do
     @entry = current_member.entries.find(params[:entry_id])
   end
-  
+
   def index
     @images = @entry.images.order(:position)
   end
@@ -36,7 +36,7 @@ class EntryImagesController < ApplicationController
     if @image.save
       redirect_to [@entry, :images], notice: "画像を更新しました。"
     else
-      render "edit"
+      render "eidt"
     end
   end
 
@@ -57,7 +57,7 @@ class EntryImagesController < ApplicationController
     @image.move_lower
     redirect_back fallback_location: [@entry, :images]
   end
-
+  
   private
 
   def image_params

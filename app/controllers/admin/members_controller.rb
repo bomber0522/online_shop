@@ -7,7 +7,6 @@ class Admin::MembersController < Admin::Base
   def show
     @member = Member.find(params[:id])
     @entries = @member.entries.paginate(page: params[:page], per_page: 3)
-    # debugger
   end
 
   def destroy

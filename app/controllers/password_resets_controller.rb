@@ -11,7 +11,7 @@ class PasswordResetsController < ApplicationController
     if @member
       @member.create_reset_digest
       @member.send_password_reset_email
-      flash[:info] = "Email sent with password reset instructions"
+      flash[:info] = "Email sent with passoword reset instructions"
       redirect_to :root
     else
       flash.now[:danger] = "Email address not found"
@@ -37,9 +37,9 @@ class PasswordResetsController < ApplicationController
 
   private
 
-  def member_params
-    params.require(:member).permit(:password, :password_confirmation)
-  end
+    def member_params
+      params.require(:member).permit(:password, :password_confirmation)
+    end
 
   def get_member
     @member = Member.find_by(email: params[:email])
