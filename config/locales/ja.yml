@@ -20,7 +20,7 @@ ja:
         administrator: 管理者
         current_password: 現在のパスワード
         password: パスワード
-        password_confirmation: パスワードの確認
+        confirmation: パスワードの確認
       article:
         title: タイトル
         body: 本文
