@@ -4,7 +4,7 @@
 
 <ul class="toolbar">
   <%= menu_link_to "ブログ記事に戻る", @entry %>
-  <%=  menu_link_to "画像の追加", [:new, @entry, :image] %>
+  <%= menu_link_to "画像の追加", [:new, @entry, :image] %>
 </ul>
 
 <% if @images.present? %>
@@ -22,7 +22,7 @@
         <tr>
           <td class="image-number"><%= index + 1 %></td>
           <td class="image-entries-setup">
-            <%= image_tag image.data.valiant(resize: "100x>"),
+            <%= image_tag image.data.variant(resize: "100x>"),
               alt: image.alt_text %>
           </td>
           <td class="image-text">
@@ -37,10 +37,10 @@
             <div class="image-down_up">
               <%= link_to_unless image.first?, "上へ",
                 move_higher_entry_image_path(@entry, image),
-                method: :path %> |
+                method: :patch %> |
                 <%= link_to_unless image.last?, "下へ",
                   move_lower_entry_image_path(@entry, image),
-                  method: :path %>
+                  method: :patch %>
             </div>
           </td>
         </tr>
@@ -48,5 +48,5 @@
     </tbody>
   </table>
 <% else %>
-    <p>画像がありません。</p>
+  <p>画像がありません。</p>
 <% end %>

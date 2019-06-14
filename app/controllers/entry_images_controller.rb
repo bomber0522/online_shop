@@ -55,7 +55,7 @@ class EntryImagesController < ApplicationController
   def move_lower
     @image = @entry.images.find(params[:id])
     @image.move_lower
-    redirect_bac fallback_location: [@entry, :images]
+    redirect_back fallback_location: [@entry, :images]
   end
 
   private
