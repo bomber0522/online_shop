@@ -19,8 +19,8 @@ ja:
         profile: プロフィール
         administrator: 管理者
         current_password: 現在のパスワード
-        password: 新しいパスワード
-        password_confirmation: 新しいパスワードの確認
+        password: パスワード
+        password_confirmation: パスワードの確認
       article:
         title: タイトル
         body: 本文
