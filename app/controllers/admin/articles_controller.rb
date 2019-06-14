@@ -1,21 +1,27 @@
 class Admin::ArticlesController < Admin::Base
 
+  # 記事一覧
   def index
-    @articles = Article.order(released_at: :desc).paginate(page: params[:page], per_page: 10)
+    @articles = Article.order(released_at: :desc)
+      .paginate(page: params[:page], per_page: 10)
   end
 
+  # 記事詳細
   def show
-    articles = Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
+  # 新規登録フォーム
   def new
     @article = Article.new
   end
 
+  # 編集フォーム
   def edit
     @article = Article.find(params[:id])
   end
 
+  # 新規作成
   def create
     @article = Article.new(article_params)
     if @article.save
@@ -25,6 +31,7 @@ class Admin::ArticlesController < Admin::Base
     end
   end
 
+  # 更新
   def update
     @article = Article.find(params[:id])
     @article.assign_attributes(article_params)
@@ -35,12 +42,14 @@ class Admin::ArticlesController < Admin::Base
     end
   end
 
+  # 削除
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to :admin_articles
   end
 
+  # ストロング・パラメータ
   private
 
   def article_params
