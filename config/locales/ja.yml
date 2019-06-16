@@ -8,13 +8,8 @@ ja:
       member:
         new_profile_picture: プロフィール画像
         remove_profile_picture: 画像を削除
-        number: 背番号
+        number: 番号
         name: ユーザー名
-        full_name: 氏名
-        sex: 性別
-        sex_1: 男
-        sex_2: 女
-        birthday: 誕生日
         email: メール
         profile: プロフィール
         administrator: 管理者
