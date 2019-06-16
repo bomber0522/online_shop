@@ -32,7 +32,7 @@
   p.vote a.button {
     border: 1px solid #ccf;
     padding: 0 3px;
-    color: #88c;
+    color: $light_purple;
     background-color: #eef;
     text-decoration: none;
   }
@@ -60,7 +60,7 @@
     color: red;
     font-weight: normal;
     font-size: 250%;
-    border-bottom: 3px solid #88c;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
     padding-left: 200px;
     margin-left: -20px;
@@ -69,7 +69,7 @@
     color: red;
     font-weight: normal;
     font-size: 250%;
-    border-bottom: 3px solid #88c;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
     padding-left: 220px;
     margin-left: -20px;
@@ -108,7 +108,7 @@ span.vote a.button,
 p.vote a.button {
   border: 1px solid #ccf;
   padding: 0 3px;
-  color: #88c;
+  color: $light_purple;
   background-color: #eef;
   text-decoration: none;
   }
@@ -116,14 +116,14 @@ p.vote a.button {
     color: red;
     font-weight: normal;
     font-size: 150%;
-    border-bottom: 3px solid #88c;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
   }
   .voted-blogs {
     color: red;
     font-weight: normal;
     font-size: 150%;
-    border-bottom: 3px solid #88c;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
   }
 }

@@ -1,10 +1,10 @@
 @media screen and (min-width:780px) and ( max-width:812px) {
   .user-profile {
     height: 100px;
-    font-size: 30px;
+    font-size: $user_group_font;
   }
   .follow-status {
-    font-size: 30px;
+    font-size: $user_group_font;
     height: 130px;
   }
   .follow-unfollow {
@@ -21,16 +21,16 @@
   }
   .profile-user {
     height: 70px;
-    font-size: 30px;
+    font-size: $user_group_font;
   }
   .prof-content {
-    font-size: 30px;
+    font-size: $user_group_font;
   }
   .profile-head {
     color: red;
     font-weight: normal;
-    font-size: 250%;
-    border-bottom: 3px solid #88c;
+    font-size: $members_page_font;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
     padding-left: 295px;
     margin-left: -20px;
@@ -38,8 +38,8 @@
   .member-profile-edit {
     color: red;
     font-weight: normal;
-    font-size: 250%;
-    border-bottom: 3px solid #88c;
+    font-size: $members_page_font;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
     padding-left: 230px;
     margin-left: -20px;
@@ -51,8 +51,8 @@
   .login-title {
     color: red;
     font-weight: normal;
-    font-size: 250%;
-    border-bottom: 3px solid #88c;
+    font-size: $members_page_font;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
     padding-left: 320px;
     margin-left: -20px;
@@ -60,8 +60,8 @@
   .forget {
     color: red;
     font-weight: normal;
-    font-size: 250%;
-    border-bottom: 3px solid #88c;
+    font-size: $members_page_font;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
     padding-left: 210px;
     margin-left: -20px;
@@ -69,8 +69,8 @@
   .reset-title {
     color: red;
     font-weight: normal;
-    font-size: 250%;
-    border-bottom: 3px solid #88c;
+    font-size: $members_page_font;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
     padding-left: 270px;
     margin-left: -20px;
@@ -81,15 +81,15 @@
   .profile-head {
     color: red;
     font-weight: normal;
-    font-size: 150%;
-    border-bottom: 3px solid #88c;
+    font-size: $members_mobile_font;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
   }
   .member-profile-edit {
     color: red;
     font-weight: normal;
-    font-size: 150%;
-    border-bottom: 3px solid #88c;
+    font-size: $members_mobile_font;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
   }
   .profile-body {
@@ -99,22 +99,22 @@
   .login-title {
     color: red;
     font-weight: normal;
-    font-size: 150%;
-    border-bottom: 3px solid #88c;
+    font-size: $members_mobile_font;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
   }
   .forget {
     color: red;
     font-weight: normal;
-    font-size: 150%;
-    border-bottom: 3px solid #88c;
+    font-size: $members_mobile_font;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
   }
   .reset-title {
     color: red;
     font-weight: normal;
-    font-size: 150%;
-    border-bottom: 3px solid #88c;
+    font-size: $members_mobile_font;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
   }
 }
