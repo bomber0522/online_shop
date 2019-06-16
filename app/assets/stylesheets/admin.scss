@@ -1,12 +1,12 @@
 @media screen and (min-width:780px) and ( max-width:812px) {
   nav#admin-menubar {
-    background-color: rgba( 255,11,0 , 0.39 );
+    background-color: $transparent_maroon;
   }
   .member-control {
     color: red;
     font-weight: normal;
     font-size: 250%;
-    border-bottom: 3px solid #88c;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
     padding-left: 295px;
     margin-left: -20px;
@@ -20,7 +20,7 @@
     color: red;
     font-weight: normal;
     font-size: 265%;
-    border-bottom: 3px solid #88c;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
     padding-left: 295px;
     margin-left: -20px;
@@ -34,13 +34,13 @@
 
 @media screen and (min-width:1281px) {
   nav#admin-menubar {
-    background-color: rgba( 255,11,0 , 0.39 );
+    background-color: $transparent_maroon;
     }
   .admin-user-title {
     color: red;
     font-weight: normal;
     font-size: 150%;
-    border-bottom: 3px solid #88c;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
   }
 }
