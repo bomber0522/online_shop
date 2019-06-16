@@ -362,9 +362,9 @@
     font-family: Meiryo, sans-serif;
   }
   /* リンク文字 */
-  a:link { color: #00c; }
-  a:visited { color: #00c; }
-  a:hover { color: #f00; }
+  a:link { color: $dark_blue; }
+  a:visited { color: $dark_blue; }
+  a:hover { color: $dark_orange; }
   a img { border: none; }
   /* ブロック要素 インデックスmainなどの上下幅 */
   p, h1, h2, h3, table, ul {
@@ -400,15 +400,15 @@
   aside#sidebar {
     float: left;
     width: 350px;
-    background-color: rgba( 255,84,255 , 0.4 );
+    background-color: $transparent_purple;
     padding: 5px;
     margin-top: 10px;
     font-size: 86%;
   }
   /* ヘッダー */
   header {
-    border-top: 4px solid #006015;
-    border-bottom: 4px solid #006015;
+    border-top: 4px solid $green;
+    border-bottom: 4px solid $green;
     ul.account-menu {
       text-align: right;
     }
@@ -417,11 +417,11 @@
   footer {
     clear: both;
     font: 15px Verdana;
-    color: #004f18;
-    border-top: 4px solid #006015;
+    color: $dark_green;
+    border-top: 4px solid $green;
     text-align: center;
     nav ul li:not(:last-child):after {
-      color: #888;
+      color: $gray;
       content: " | ";
       margin: 0 5px;
     }
@@ -429,13 +429,13 @@
   /* メニューバー */
   nav.menubar {
     padding: 6px;
-    background-color: rgba( 16,160,24 , 0.17 );
+    background-color: $transparent_deep_green;
     color: yellow;
     font-size: 100%;
     padding: 7px 25px;
   }
   nav.menubar ul li:not(:last-child):after {
-    color: #000000;
+    color: $black;
     content: " | ";
     margin: 0 2px;
   }
@@ -447,10 +447,10 @@
   nav.menubar a:visited { color: purple; }
   /* メニューバーのリンク（マウスを合わせたとき） */
   nav.menubar a:hover {
-    color: #f88;
+    color: $orange;
     font-weight: bold;
     span {
-      color: #ff8;
+      color: $yellow;
       font-weight: bold;
     }
   }
@@ -459,12 +459,12 @@
     color: red;
     font-weight: normal;
     font-size: 150%;
-    border-bottom: 3px solid #88c;
+    border-bottom: 3px solid $light_purple;
     margin-bottom: 0.5em;
   }
   main h2 {
     color: white;
-    background-color: rgba( 255,0,4 , 0.34 );
+    background-color: $transparent_middle_purple;
   }
   main p {
     font-size: 90%;
@@ -477,7 +477,7 @@
     text-align: right;
   }
   ul.toolbar li:not(:last-child):after {
-    color: #888;
+    color: $gray;
     content: " | ";
     margin: 0 2px;
   }
@@ -499,9 +499,9 @@
     }
   }
   aside#sidebar h2 {
-    color: #080;
+    color: $light_green;
     font-weight:lighter;
-    border-bottom: 1px dotted #080;
+    border-bottom: 1px dotted $light_green;
     margin-bottom: 0.5em;
     font-size: 30px;
   }
@@ -575,12 +575,12 @@
   }
   #relationship-title {
     color: blue;
-    background-color: rgba( 57,206,16 , 0.2 );
+    background-color: $transparent_dark_green;
     width: 106px;
     text-align: center;
     height: 30px;
     padding-bottom: 9px;
-    border: 2px solid rgba( 198,49,239 , 0.43 );
+    border: 2px solid $transparent_dark_purple;
     margin-top: 50px;
     margin-bottom: 10px;
     .relationship-name {
@@ -597,7 +597,7 @@
     padding-top: 20px;
     padding-bottom: 15px;
     margin-left: -10px;
-    background-color: rgba( 57,206,16 , 0.2 );
+    background-color: $transparent_dark_green;
     text-align: center;
     padding-left: 8px;
   }
