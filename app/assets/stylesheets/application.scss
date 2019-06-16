@@ -1,20 +1,21 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import "config/colors";
+@import "admin/top";
+@import "./admin";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "./custum.scss";
+@import "./articles";
+@import "./entries";
+@import "./entry_images";
+@import "./errors";
+@import "./flash";
+@import "./header";
+@import "./members";
+@import "./pagination";
+@import "./table";
+@import "./top";
 
- @media screen and (min-width:780px) and ( max-width:812px) {
+@media screen and (min-width:780px) and ( max-width:812px) {
   /* ページ全体 */
   body {
     width: 780px;
@@ -52,17 +53,14 @@
   div#container {
     width: 780px;
     margin: 0 auto;
-    // padding-top: 20px;
+    main {
+      float:left;
+      width: 780px;
+      padding: 10px 10px 10px 0;
+      margin-left: 30px;
+      margin-top: 150px;
+    }
   }
-  /* 左の枠（コンテンツを入れる） */
-  main {
-    float: left;
-    width: 780px;
-    padding: 10px 10px 10px 0;
-    margin-left: 30px;
-    margin-top: 150px;
-  }
-  /* 右の枠（サイドバーを入れる） */
   aside#sidebar {
     float: left;
     width: 700px;
@@ -70,19 +68,17 @@
     padding: 5px;
     margin-left: 40px;
     font-size: 86%;
-    // margin-top: -20px;
     margin-bottom: 50px;
   }
-  /* ヘッダー */
   header {
     position: fixed;
     border-top: 4px solid #006015;
     border-bottom: 4px solid #006015;
     width: 900px;
     background-color: white;
-  }
-  ul.account-menu {
-    text-align: right;
+    ul.account-menu {
+      text-align: right;
+    }
   }
   /* フッター */
   footer {
@@ -92,18 +88,17 @@
     border-top: 4px solid #006015;
     text-align: center;
     padding: 20px;
-  }
-  footer nav ul li:not(:last-child):after {
-    color: #888;
-    content: " | ";
-    margin: 0 5px;
+    footer nav ul li:not(:last-child):after {
+      color: #888;
+      content: " | ";
+      margin: 0 5px;
+    }
   }
   /* メニューバー */
   nav.menubar {
     background-color: #2a93cb;
      color: yellow;
      font-size: 25px;
-     // padding: 7px 25px;
      height: 70px;
      width: 810px;
      padding-left: 10px;
@@ -118,21 +113,20 @@
     content: " | ";
     margin: 0 2px;
   }
-  /* メニューバーのリンク */
+ 
   nav.menubar a { text-decoration: none; }
-  /* メニューバーのリンク（未訪問） */
+
   nav.menubar a:link { color: red; }
-  /* メニューバーのリンク（訪問済） */
+
   nav.menubar a:visited { color: purple; }
-  /* メニューバーのリンク（マウスを合わせたとき） */
+ 
   nav.menubar a:hover {
     color: #f88;
     font-weight: bold;
-  }
-  /* メニューバーのリンク（現在のページ） */
-  nav.menubar span {
-    color: #ff8;
-    font-weight: bold;
+    nav.menubar span {
+      color: #ff8;
+      font-weight: bold;
+    }
   }
   /* メインコンテンツ */
   main h1 {
@@ -165,28 +159,28 @@
     padding: 15px 70px;
     font-size: 180%;
     text-align: right;
-  }
-  ul.toolbar li:not(:last-child):after {
-    color: #888;
-    content: " | ";
-    margin: 0 2px;
+    ul.toolbar li:not(:last-child):after {
+      color: #888;
+      content: " | ";
+      margin: 0 2px;
+    }
   }
   /* サイドバー */
   form#login-form {
     font-size: 12px;
-  }
-  form#login-form div {
-    padding: 2px;
-    text-align: center;
-  }
-  form#login-form label {
-    display: inline-block;
-    width: 80px;
-    text-align: center;
-  }
-  form#login-form input[type="text"],
-  form#login-form input[type="password"] {
-    width: 120px;
+    form#login-form div {
+      padding: 2px;
+      text-align: center;
+      form#login-form label {
+        display: inline-block;
+        width: 80px;
+        text-align: center;
+        form#login-form input[type="text"],
+        form#login-form input[type="password"] {
+          width: 120px;
+        }
+      }
+    }
   }
   aside#sidebar h2 {
     color: #080;
@@ -199,11 +193,11 @@
   aside#sidebar ul {
     padding-left: 138px;
     list-style-type: none;
-  }
-  aside#sidebar li {
-    font-size: 25px;
-    letter-spacing: 0.3em;
-    margin-bottom: 1em;
+    li {
+      font-size: 25px;
+      letter-spacing: 0.3em;
+      margin-bottom: 1em;     
+    }
   }
   .info1 {
     font-size: 35px;
@@ -307,10 +301,10 @@
     padding-left: 9px;
     margin-left: 10px;
     border: 2px solid rgba( 198,49,239 , 0.43 );
-  }
-  .relationship-name {
-    letter-spacing: 4px;
-    text-align: center;
+    .relationship-name {
+      letter-spacing: 4px;
+      text-align: center;
+    }
   }
   .dropdown-menu {
      font-size: 25px;
@@ -396,12 +390,11 @@
     margin: 0 auto;
     padding-top: 20px;
     width: 880px;
-  }
-/* 左の枠（コンテンツを入れる） */
-  main {
-    float: left;
-    width: 530px;
-    padding: 10px 10px 10px 0;
+    main {
+      float: left;
+      width: 530px;
+      padding: 10px 10px 10px 0;
+    }
   }
 /* 右の枠（サイドバーを入れる） */
   aside#sidebar {
@@ -416,9 +409,9 @@
   header {
     border-top: 4px solid #006015;
     border-bottom: 4px solid #006015;
-  }
-  ul.account-menu {
-    text-align: right;
+    ul.account-menu {
+      text-align: right;
+    }
   }
   /* フッター */
   footer {
@@ -427,11 +420,11 @@
     color: #004f18;
     border-top: 4px solid #006015;
     text-align: center;
-  }
-  footer nav ul li:not(:last-child):after {
-    color: #888;
-    content: " | ";
-    margin: 0 5px;
+    nav ul li:not(:last-child):after {
+      color: #888;
+      content: " | ";
+      margin: 0 5px;
+    }
   }
   /* メニューバー */
   nav.menubar {
@@ -445,7 +438,7 @@
     color: #000000;
     content: " | ";
     margin: 0 2px;
-    }
+  }
   /* メニューバーのリンク */
   nav.menubar a { text-decoration: none; }
   /* メニューバーのリンク（未訪問） */
@@ -456,11 +449,10 @@
   nav.menubar a:hover {
     color: #f88;
     font-weight: bold;
-  }
-  /* メニューバーのリンク（現在のページ） */
-  nav.menubar span {
-    color: #ff8;
-    font-weight: bold;
+    span {
+      color: #ff8;
+      font-weight: bold;
+    }
   }
   /* メインコンテンツ */
   main h1 {
@@ -492,19 +484,19 @@
   /* サイドバー */
   form#login-form {
     font-size: 12px;
-  }
-  form#login-form div {
-    padding: 2px;
-    text-align: center;
-  }
-  form#login-form label {
-    display: inline-block;
-    width: 80px;
-    text-align: center;
-  }
-  form#login-form input[type="text"],
-  form#login-form input[type="password"] {
-    width: 120px;
+    div {
+      padding: 2px;
+      text-align: center;
+      label {
+        display: inline-block;
+        width: 80px;
+        text-align: center;
+        input[type="text"],
+        input[type="password"] {
+          width: 120px;
+        }
+      }
+    }
   }
   aside#sidebar h2 {
     color: #080;
@@ -516,11 +508,11 @@
   aside#sidebar ul {
     padding-left: 1em;
     list-style-type: none;
-  }
-  aside#sidebar li {
-    font-size: 15px;
-    letter-spacing: 0.3em;
-    margin-bottom: 0.3em;
+    li {
+      font-size: 15px;
+      letter-spacing: 0.3em;
+      margin-bottom: 0.3em;
+    }
   }
   .info2 {
     margin-top: -28px;
@@ -591,10 +583,10 @@
     border: 2px solid rgba( 198,49,239 , 0.43 );
     margin-top: 50px;
     margin-bottom: 10px;
-  }
-  .relationship-name {
-    letter-spacing: 4px;
-    text-align: center;
+    .relationship-name {
+      letter-spacing: 4px;
+      text-align: center;
+    }
   }
   .blog-count {
   padding-left: 20px;
