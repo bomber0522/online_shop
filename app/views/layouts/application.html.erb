@@ -13,9 +13,6 @@
     <div id="container">
       <header>
         <%= render "shared/header" %>
-          <% flash.each do |message_type, message| %>
-            <div class="alert alert-<%= message_type %><%= message %>"></div>
-          <% end %>
       </header>
       <main>
           <% if flash.notice %>

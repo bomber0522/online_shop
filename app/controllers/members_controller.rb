@@ -22,8 +22,7 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
     if @member.save
       @member.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
-      redirect_to :root
+      redirect_to :root, notice: "認証確認メール送りましたので「Activate」をクリックしてください。"
     else
       render "new"
     end
@@ -35,8 +34,7 @@ class MembersController < ApplicationController
 
   def update
     if @member.update_attributes(member_params)
-      flash[:success] = "Profile updated"
-      redirect_to @member
+      redirect_to @member, notice: "変更が完了しました。"
     else
       render 'edit'
     end
@@ -44,8 +42,7 @@ class MembersController < ApplicationController
 
   def destroy
     Member.find(params[:id]).destroy
-    flash[:success] = "Member deleted"
-    redirect_to :members
+    redirect_to :members, notice: "会員を削除しました。"
   end
 
   def following
@@ -72,15 +69,15 @@ class MembersController < ApplicationController
   def logged_in_member
     unless logged_in?
       store_location
-      flash[:danger] = "Please log in."
-      redirect_to login_url
+      redirect_to login_url, notice: "ログインしてください。"
     end
   end
 
   def correct_member
-      @member = Member.find(params[:id])
-      redirect_to(root_url) unless current_member?(@member)
-    end
+    @member = Member.find(params[:id])
+    redirect_to(root_url) unless current_member?(@member)
+end
+
 
   def admin_member
     redirect_to(root_url) unless current_member.admin?

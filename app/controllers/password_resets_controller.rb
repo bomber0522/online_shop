@@ -1,3 +1,4 @@
+
 class PasswordResetsController < ApplicationController
   before_action :get_member, only: [:edit, :update]
   before_action :valid_member, only: [:edit, :update]
