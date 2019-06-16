@@ -22,7 +22,7 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
     if @member.save
       @member.send_activation_email
-      flash[:info] = "Please chaeck your email to activate your account."
+      flash[:info] = "Please check your email to activate your account."
       redirect_to :root
     else
       render "new"
@@ -30,11 +30,10 @@ class MembersController < ApplicationController
   end
 
   def edit
-    # @member = Member.find(params[:id])
+
   end
 
   def update
-    # @member = Member.find(params[:id])
     if @member.update_attributes(member_params)
       flash[:success] = "Profile updated"
       redirect_to @member
@@ -79,8 +78,6 @@ class MembersController < ApplicationController
   end
 
   def correct_member
-      # GET   /users/:id/edit
-      # PATCH /users/:id
       @member = Member.find(params[:id])
       redirect_to(root_url) unless current_member?(@member)
     end
