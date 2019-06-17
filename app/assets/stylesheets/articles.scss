@@ -7,10 +7,10 @@
     margin-left: -15px;
     padding-right: 70px;
     padding-bottom: 20px;
-    }
-   .news-show {
-     padding-left: 150px;
-    }
+  }
+  .news-show {
+    padding-left: 150px;
+  }
    .news-article-create {
      color: red;
      font-weight: normal;
@@ -19,44 +19,44 @@
      margin-bottom: 0.5em;
      padding-left: 220px;
      margin-left: -20px;
+  }
+  .edit-articles-news {
+    color: red;
+    font-weight: normal;
+    font-size: 250%;
+    border-bottom: 3px solid $light_purple;
+    margin-bottom: 0.5em;
+    padding-left: 230px;
+    margin-left: -20px;
+  }
+  .back-show {
+    font-size: 30px;
+    .article-edit {
+      padding-top: 10px;
     }
-   .edit-articles-news {
-     color: red;
-     font-weight: normal;
-     font-size: 250%;
-     border-bottom: 3px solid $light_purple;
-     margin-bottom: 0.5em;
-     padding-left: 230px;
-     margin-left: -20px;
-    }
-   .back-show {
-     font-size: 30px;
-    }
-   .article-edit {
-     padding-top: 10px;
-    }
-   .news-show-title {
-     color: red;
-     font-weight: normal;
-     font-size: 250%;
-     border-bottom: 3px solid $light_purple;
-     margin-bottom: 0.5em;
-     padding-left: 160px;
-     margin-left: -20px;
-    }
-   .back-edit {
-     font-size: 250%;
-     padding-top: 30px;
-     padding-left: 15px;
-     padding-bottom: 20px;
-    }
-    .no-pic {
-      text-align: center;
-    }
-    .image-pic {
+  }
+  .news-show-title {
+    color: red;
+    font-weight: normal;
+    font-size: 250%;
+    border-bottom: 3px solid $light_purple;
+    margin-bottom: 0.5em;
+    padding-left: 160px;
+    margin-left: -20px;
+  }
+  .back-edit {
+    font-size: 250%;
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-bottom: 20px;
+  }
+  .no-pic {
+    text-align: center;
+    .imgage-pic {
       text-align: center;
     }
   }
+}
   
   @media screen and (min-width:1281px) {
     div.article-footer {
