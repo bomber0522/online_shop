@@ -35,12 +35,12 @@
 @media screen and (min-width:1281px) {
   nav#admin-menubar {
     background-color: $transparent_maroon;
-    .admin-user-title {
-      color: red;
-      font-weight: normal;
-      font-size: 150%;
-      border-bottom: 3px solid $light_purple;
-      margin-bottom: 0.5em;
-    }
+  }
+  .admin-user-title {
+    color: red;
+    font-weight: normal;
+    font-size: 150%;
+    border-bottom: 3px solid $light_purple;
+    margin-bottom: 0.5em;
   }
 }
