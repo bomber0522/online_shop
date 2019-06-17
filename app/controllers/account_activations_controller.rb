@@ -5,11 +5,9 @@ class AccountActivationsController < ApplicationController
     if member && !member.activated? && member.authenticated?(:activation, params[:id])
       member.activate
       log_in member
-      flash[:success] = "Account activated!"
-      redirect_to member
+      redirect_to member, notice: "Account activated!"
     else
-      flash[:danger] = "Invalid activation link"
-      redirect_to :root
+      redirect_to :root, notice: "Invalid activation link"
     end
   end
 end
