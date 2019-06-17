@@ -1,11 +1,11 @@
-names = %w(Taro Jiro Hana John Mike Sophy Bill Alex Mary Tom)
+names = %w(Bomber Pepe Kaira Rikito Jun Dave Rob Ken Ichiro Mie)
 0.upto(9) do |idx|
   Member.create(
     name: names[idx],
     email: "#{names[idx]}@example.com",
     admin: (idx == 0),
-    password: "asagao",
-    password_confirmation: "asagao",
+    password: "djbomber",
+    password_confirmation: "djbomber",
     activated: true,
     activated_at: Time.zone.now
   )
@@ -13,8 +13,8 @@ end
 
 0.upto(29) do |idx|
   Member.create(
-    name: "John#{idx + 1}",
-    email: "John#{idx+1}@example.com",
+    name: "Pepe#{idx + 1}",
+    email: "Pepe#{idx+1}@example.com",
     admin: false,
     password: "password",
     password_confirmation: "password",
@@ -56,7 +56,7 @@ body =
   "このギムネマは甘いものを感じなくなるので、デザートなどへの欲求を抑えることができるそうです。\n\n" +
   "不思議な世界観に導いてくれる味のような気がしました。"
 
-%w(Taro Jiro Hana).each do |name|
+%w(Bomber Pepe Kaira).each do |name|
   member = Member.find_by(name: name)
   0.upto(9) do |idx|
     Entry.create(
