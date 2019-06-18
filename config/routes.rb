@@ -27,9 +27,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "top#index"
-    resources :members do
-      get "search", on: :collection
-    end
+    resources :members
     resources :articles
   end
 end
